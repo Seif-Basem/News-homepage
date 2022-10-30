@@ -1,0 +1,285 @@
+:root{
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+    --p-size: 15px;
+}
+body{
+    font-family: 'Inter', sans-serif;
+}
+/* start header */
+header{
+    padding: 50px 0 30px;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .container .open,
+header .container .close{
+    display: none;
+}
+header .list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .list li{
+    padding: 20px;
+}
+header .list li a{
+    color: var(--Dark-grayish-blue);
+    transition: 0.3s;
+}
+header .list li a:hover{
+    color: var(--Soft-red);
+}
+@media (max-width: 991px) {
+    header .container .open{
+        display: block;
+    }
+    header .container .close{
+        display: none;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+    }
+    header .container .close.showw{
+        display: block;
+    }
+    header .list{
+        position: fixed;
+        top: 0px;
+        right: -300px;
+        height: 100%;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: var(--Off-white);
+        box-shadow: -9px 0px 20px 3px #00000094;
+        padding-top: 100px;
+        display: none;
+        transition: 0.3s;
+    }
+    header .list.show{
+        display: block;
+        right: 0px;
+    }
+    header .list li a{
+        color: var(--Very-dark-blue);
+        font-weight: 700;
+    }
+}
+/* end header */
+/* start landing */
+.landing .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.landing .left{
+    width: 65%;
+}
+.landing .left .desktop{
+    width: 100%;
+}
+.landing .left .mobile{
+    display: none;
+}
+.landing .left .content{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+.landing .left .content .head{
+    width: 50%;
+}
+.landing .left .content .head h1{
+    font-size: 55px;
+    font-weight: 800;
+    color: var(--Very-dark-blue);
+    margin-right: 30px;
+}
+.landing .left .content .info{
+    width: 45%;
+}
+.landing .left .content .info p{
+    font-size: var(--p-size);
+    color: var(--Dark-grayish-blue);
+    line-height: 1.8;
+    margin-bottom: 52px;
+}
+.landing .left .content .info a{
+    background-color: var(--Soft-red);
+    color: var(--Off-white);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    padding: 20px 40px;
+    transition: 0.3s;
+}
+.landing .left .content .info a:hover{
+    background-color: var(--Very-dark-blue);
+}
+.landing .right{
+    width: 30%;
+    padding: 17px 22px;
+    background-color: var(--Very-dark-blue);
+    color: white;
+    height: 530px;
+}
+.landing .right .content h2{
+    color: var(--Soft-orange);
+    padding-top: 10px;
+    font-size: 38px;
+}
+.landing .right .content .info{
+    padding-top: 40px;
+}
+.landing .right .content .info:not(:last-child){
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--Dark-grayish-blue);
+}
+.landing .right .content .info h3{
+    margin-bottom: 10px;
+    font-size: 21px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.landing .right .content .info h3:hover{
+    color: var(--Soft-orange);
+}
+.landing .right .content .info p{
+    font-size: var(--p-size);
+    color: var(--Grayish-blue);
+    line-height: 1.7;
+}
+@media (max-width: 1199px) {
+    .landing .right .content h2{
+        font-size: 30px;
+    }
+    .landing .right .content .info{
+        padding-top: 25px;
+    }
+    .landing .right .content .info h3{
+        font-size: 16px;
+    }
+}
+@media (max-width: 991px) {
+    .landing .container{
+        flex-direction: column;
+    }
+    .landing .left{
+        width: 100%;
+    }
+    .landing .left .desktop{
+        display: none;
+    }
+    .landing .left .mobile{
+        display: flex;
+        width: 100%;
+    }
+    .landing .left .content{
+        flex-direction: column;
+    }
+    .landing .left .content .head{
+        width: 100%;
+    }
+    .landing .left .content .head h1{
+        font-size: 55px;
+        font-weight: 800;
+        color: var(--Very-dark-blue);
+        margin-right: 30px;
+        margin-bottom: 20px;
+    }
+    .landing .left .content .info{
+        width: 100%;
+        margin-bottom: 100px;
+    }
+    
+    .landing .right{
+        height: 530px;
+        width: 100%;
+    }
+    .landing .right .content h2{
+        font-size: 40px;
+    }
+    .landing .right .content .info{
+        padding-top: 25px;
+    }
+    .landing .right .content .info h3{
+        font-size: 18px;
+    }
+}
+
+/* end landing */
+/* start services */
+.services{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.services .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.services .box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    width: 350px;
+    margin-bottom: 30px;
+}
+.services .box img{
+    width: 100px;
+}
+.services .box .info h1{
+    color: var(--Grayish-blue);
+}
+.services .box .info h2{
+    font-size: 19px;
+    font-weight: 700;
+    margin: 10px 0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.services .box .info h2:hover{
+    color: var(--Soft-red)
+}
+.services .box .info p{
+    font-size: var(--p-size);
+    color: var(--Dark-grayish-blue);
+    line-height: 1.7;
+    padding-right: 26px;
+}
+@media (max-width: 1199px) {
+    .services .box .info h2{
+        font-size: 15px;
+    }
+    .services .box .info p{
+    font-size: 11px;
+    }
+}
+@media (max-width: 991px) {
+    .services .box .info h2{
+        font-size: 18px;
+    }
+    .services .box .info p{
+    font-size: 15px;
+    }
+}
+/* end services */
+
+/* 1:09:00 */
+/* 0:41:00 */
+/* 0:7:00 */
